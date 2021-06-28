@@ -1,11 +1,9 @@
-
+import FileInput from "./components/FileInput";
 
 function App() {
-  return (
-    <div className="App">
-     
-    </div>
-  );
+  return <div className="App">
+    <FileInput />
+  </div>;
 }
 
 export default App;
