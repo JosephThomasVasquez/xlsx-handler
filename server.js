@@ -12,8 +12,12 @@ app.use(express.json());
 // Allow CORS origin
 app.use(
     cors({
-      origin: "http://localhost:3000",
+        origin: "http://localhost:3000",
     })
-  );
+);
 
-  
+const PORT = process.env.PORT;
+
+  app.listen(PORT, () => {
+    console.log("Running Server On Port: ", PORT);
+  });
