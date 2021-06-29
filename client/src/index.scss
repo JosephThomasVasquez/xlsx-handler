@@ -16,7 +16,7 @@ code {
 }
 
 .container {
-  width: 400px;
+  width: 1200px;
   margin: 2em auto 0 auto;
   text-align: center;
 
@@ -28,7 +28,16 @@ code {
 
     .file-input {
       width: 100%;
-      padding: 0.5em 0 ;
+      padding: 0.5em 0;
     }
   }
+}
+
+.table-view {
+  width: 100%;
+  padding: 1em;
+  margin-top: 1em;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
 }
