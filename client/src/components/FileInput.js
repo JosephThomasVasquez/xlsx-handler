@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import * as xlsx from "xlsx";
+import TableComponent from "./TableComponent";
 
 const FileInput = () => {
   const [file, setFile] = useState("");
@@ -77,6 +78,9 @@ const FileInput = () => {
         />
         <button type="submit">Submit</button>
       </form>
+      <section className="table-section">
+          <TableComponent />
+      </section>
     </div>
   );
 };
