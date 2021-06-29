@@ -6,6 +6,7 @@ const TableComponent = ({ data }) => {
   useEffect(() => {
     if (data) {
       console.log("File Data: ", data);
+      console.log(data[0]);
       setDataLoaded(true);
     }
   }, []);
@@ -20,14 +21,13 @@ const TableComponent = ({ data }) => {
           </tr>
 
           {dataLoaded &&
-            data.map((item) => (
-              <tr>
-                <td key={item.Task + Math.random() * 1000}>{item.Task}</td>
-                <td key={item.Project + Math.random() * 1000}>
-                  {item.Project}
-                </td>
-                <td key={item.Person + Math.random() * 1000}>{item.Person}</td>
-                <td key={item.Total + Math.random() * 1000}>{item.Total}</td>
+            data.map((item, index) => (
+              <tr className="" key={index}>
+                <td>{Object.values(item)[0]}</td>
+                <td>{Object.values(item)[1]}</td>
+                <td>{Object.values(item)[2]}</td>
+                <td>{Object.values(item)[3]}</td>
+                <td>{Object.values(item)[4]}</td>
               </tr>
             ))}
         </tbody>
