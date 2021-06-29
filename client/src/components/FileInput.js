@@ -4,10 +4,13 @@ import TableComponent from "./TableComponent";
 
 const FileInput = () => {
   const [file, setFile] = useState("");
+
   const handleFile = (e) => {
     e.preventDefault();
+    e.stopPropagation();
+    console.log(e.target);
 
-    const fileData = e.target.files[0];
+    const fileData = e.target.files[0] || e.dataTransfer.files[0];
 
     // Set file sate
     // setFile(fileData);
@@ -51,6 +54,11 @@ const FileInput = () => {
 
         // Data
         const sheetData = xlsx.utils.sheet_to_json(data);
+        const sheetDataWithHeaders = xlsx.utils.sheet_to_json(data, {
+          raw: true,
+          header: 1,
+        });
+        console.log("With headers", sheetDataWithHeaders);
 
         resolve(sheetData);
       };
@@ -78,6 +86,7 @@ const FileInput = () => {
           id="file"
           className="file-input"
           onChange={handleFile}
+          onDrop={handleFile}
         />
         <button type="submit">Submit</button>
       </form>
