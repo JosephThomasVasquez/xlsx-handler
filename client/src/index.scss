@@ -21,8 +21,9 @@ code {
 
 .form {
   background: white;
-}
+  border-radius: 5px;
 
-.file-input {
-  width: 100%;
+  .file-input {
+    width: 100%;
+  }
 }
