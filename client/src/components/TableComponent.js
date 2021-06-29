@@ -2,11 +2,17 @@ import React, { useState, useEffect } from "react";
 
 const TableComponent = ({ data }) => {
   const [dataLoaded, setDataLoaded] = useState(false);
+  const [tableHeaders, setTableHeaders] = useState([]);
 
   useEffect(() => {
     if (data) {
       console.log("File Data: ", data);
-      console.log(data[0]);
+
+      const headerData = Object.keys(data[0]);
+      if (headerData) {
+        setTableHeaders(headerData);
+        console.log("Table Headers", tableHeaders);
+      }
       setDataLoaded(true);
     }
   }, []);
@@ -15,9 +21,12 @@ const TableComponent = ({ data }) => {
       <table className="table-view">
         <tbody>
           <tr>
-            <th>Firstname</th>
-            <th>Lastname</th>
-            <th>Age</th>
+            {tableHeaders &&
+              tableHeaders.map((header, index) => (
+                <th className="item-table-data" key={index}>
+                  {header}
+                </th>
+              ))}
           </tr>
 
           {dataLoaded &&
