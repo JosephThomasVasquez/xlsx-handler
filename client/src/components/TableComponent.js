@@ -22,12 +22,12 @@ const TableComponent = ({ data }) => {
 
           {dataLoaded &&
             data.map((item, index) => (
-              <tr className="" key={index}>
-                <td>{Object.values(item)[0]}</td>
-                <td>{Object.values(item)[1]}</td>
-                <td>{Object.values(item)[2]}</td>
-                <td>{Object.values(item)[3]}</td>
-                <td>{Object.values(item)[4]}</td>
+              <tr className="item-table-row" key={index}>
+                <td className="item-table-data">{Object.values(item)[0]}</td>
+                <td className="item-table-data">{Object.values(item)[1]}</td>
+                <td className="item-table-data">{Object.values(item)[2]}</td>
+                <td className="item-table-data">{Object.values(item)[3]}</td>
+                <td className="item-table-data">{Object.values(item)[4]}</td>
               </tr>
             ))}
         </tbody>
