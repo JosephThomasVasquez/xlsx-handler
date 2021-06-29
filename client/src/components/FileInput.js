@@ -10,7 +10,7 @@ const FileInput = () => {
     const fileData = e.target.files[0];
 
     // Set file sate
-    setFile(fileData);
+    // setFile(fileData);
 
     if (fileData) {
       console.log(file);
@@ -20,9 +20,9 @@ const FileInput = () => {
   };
 
   useEffect(() => {
-    if (file) {
-      console.log("File loaded", file);
-    }
+    // if (file) {
+    //   console.log("File loaded", file);
+    // }
   }, []);
 
   const fileHandler = (file) => {
@@ -62,6 +62,7 @@ const FileInput = () => {
 
     promise.then((d) => {
       console.log(d);
+
       // Set file sate
       setFile(d);
     });
@@ -81,7 +82,7 @@ const FileInput = () => {
         <button type="submit">Submit</button>
       </form>
       <section className="table-section">
-        <TableComponent data={file} />
+        {file && <TableComponent data={file} />}
       </section>
     </div>
   );

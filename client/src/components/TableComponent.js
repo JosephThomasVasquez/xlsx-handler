@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 const TableComponent = ({ data }) => {
+  const [dataLoaded, setDataLoaded] = useState(false);
 
-    console.log('file data: ', data)
+  useEffect(() => {
+    if (data) {
+      console.log("File Data: ", data);
+      setDataLoaded(true);
+    }
+  }, []);
   return (
     <div>
       <table className="table-view">
@@ -12,16 +18,18 @@ const TableComponent = ({ data }) => {
             <th>Lastname</th>
             <th>Age</th>
           </tr>
-          <tr>
-            <td>Jill</td>
-            <td>Smith</td>
-            <td>50</td>
-          </tr>
-          <tr>
-            <td>Eve</td>
-            <td>Jackson</td>
-            <td>94</td>
-          </tr>
+
+          {dataLoaded &&
+            data.map((item) => (
+              <tr>
+                <td key={item.Task + Math.random() * 1000}>{item.Task}</td>
+                <td key={item.Project + Math.random() * 1000}>
+                  {item.Project}
+                </td>
+                <td key={item.Person + Math.random() * 1000}>{item.Person}</td>
+                <td key={item.Total + Math.random() * 1000}>{item.Total}</td>
+              </tr>
+            ))}
         </tbody>
       </table>
     </div>
