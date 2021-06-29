@@ -23,7 +23,7 @@ const TableComponent = ({ data }) => {
           <tr>
             {tableHeaders &&
               tableHeaders.map((header, index) => (
-                <th className="item-table-data" key={index}>
+                <th className="item-table-headers" key={index}>
                   {header}
                 </th>
               ))}
