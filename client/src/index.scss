@@ -24,9 +24,11 @@ code {
     background: white;
     border-radius: 5px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    padding: 1em;
 
     .file-input {
       width: 100%;
+      padding: 0.5em 0;
     }
   }
 }
