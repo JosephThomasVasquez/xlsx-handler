@@ -62,6 +62,8 @@ const FileInput = () => {
 
     promise.then((d) => {
       console.log(d);
+      // Set file sate
+      setFile(d);
     });
   };
 
@@ -79,7 +81,7 @@ const FileInput = () => {
         <button type="submit">Submit</button>
       </form>
       <section className="table-section">
-          <TableComponent />
+        <TableComponent data={file} />
       </section>
     </div>
   );

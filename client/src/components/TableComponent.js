@@ -1,6 +1,8 @@
 import React from "react";
 
 const TableComponent = ({ data }) => {
+
+    console.log('file data: ', data)
   return (
     <div>
       <table className="table-view">
