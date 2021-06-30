@@ -90,7 +90,7 @@ const FileInput = () => {
             onDrop={handleFile}
             multiple
           />
-          <p className="file-text">Drag file or Click here to choose a file.</p>
+          <p className="file-text">Drag or Select a File.</p>
         </label>
 
         <button type="submit">Submit</button>

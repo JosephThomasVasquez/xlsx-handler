@@ -28,7 +28,8 @@ code {
 
     .grid-section {
       display: grid;
-      border: 2px dashed rgba(0, 0, 0, 0.1);
+      border: 2px dashed rgba(0, 0, 0, 0.25);
+      border-radius: 5px;
     }
 
     .file-input {
