@@ -17,7 +17,9 @@ const FileInput = () => {
       "application/vnd.ms-excel",
     ];
 
-    if (fileData && fileData.type) {
+    console.log(mimeTypes.includes(fileData.type));
+
+    if (fileData && mimeTypes.includes(fileData.type)) {
       console.log("file target", fileData);
     }
 
