@@ -8,15 +8,17 @@ const FileInput = () => {
   const handleFile = (e) => {
     e.preventDefault();
     e.stopPropagation();
-    console.log(e.target);
 
     const fileData = e.target.files[0] || e.dataTransfer.files[0];
 
-    // Set file sate
-    // setFile(fileData);
+    // Check MIME Types
+    const mimeTypes = [
+      "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "application/vnd.ms-excel",
+    ];
 
-    if (fileData) {
-      console.log(file);
+    if (fileData && fileData.type) {
+      console.log("file target", fileData);
     }
 
     fileHandler(fileData);
