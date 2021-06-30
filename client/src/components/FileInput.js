@@ -11,16 +11,14 @@ const FileInput = () => {
 
     const fileData = e.target.files[0] || e.dataTransfer.files[0];
 
-    // Check MIME Types
+    // Check valid MIME Types for Excel formats
     const mimeTypes = [
       "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
       "application/vnd.ms-excel",
     ];
 
-    console.log(mimeTypes.includes(fileData.type));
-
     if (fileData && mimeTypes.includes(fileData.type)) {
-      console.log("file target", fileData);
+    //   console.log("file target", fileData);
       fileHandler(fileData);
     }
   };
