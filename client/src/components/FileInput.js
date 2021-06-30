@@ -21,9 +21,8 @@ const FileInput = () => {
 
     if (fileData && mimeTypes.includes(fileData.type)) {
       console.log("file target", fileData);
+      fileHandler(fileData);
     }
-
-    fileHandler(fileData);
   };
 
   useEffect(() => {
@@ -83,7 +82,7 @@ const FileInput = () => {
   return (
     <div className="container">
       <form action="" className="form">
-        <label htmlFor="file">
+        <label htmlFor="file" className="grid-section">
           <input
             type="file"
             name="file"
