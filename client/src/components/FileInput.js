@@ -83,15 +83,19 @@ const FileInput = () => {
   return (
     <div className="container">
       <form action="" className="form">
-        <label htmlFor="file">File</label>
-        <input
-          type="file"
-          name="file"
-          id="file"
-          className="file-input"
-          onChange={handleFile}
-          onDrop={handleFile}
-        />
+        <label htmlFor="file">
+          <input
+            type="file"
+            name="file"
+            id="file"
+            className="file-input"
+            onChange={handleFile}
+            onDrop={handleFile}
+            multiple
+          />
+          <p className="file-text">Drag file or Click here to choose a file.</p>
+        </label>
+
         <button type="submit">Submit</button>
       </form>
       <section className="table-section">
