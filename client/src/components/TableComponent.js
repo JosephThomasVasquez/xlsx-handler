@@ -16,6 +16,7 @@ const TableComponent = ({ data }) => {
       setDataLoaded(true);
     }
   }, []);
+
   return (
     <div>
       <table className="table-view">

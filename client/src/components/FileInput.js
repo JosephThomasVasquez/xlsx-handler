@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import * as xlsx from "xlsx";
 import TableComponent from "./TableComponent";
 
@@ -18,16 +18,10 @@ const FileInput = () => {
     ];
 
     if (fileData && mimeTypes.includes(fileData.type)) {
-    //   console.log("file target", fileData);
+      //   console.log("file target", fileData);
       fileHandler(fileData);
     }
   };
-
-  useEffect(() => {
-    // if (file) {
-    //   console.log("File loaded", file);
-    // }
-  }, []);
 
   const fileHandler = (file) => {
     const promise = new Promise((resolve, reject) => {
