@@ -74,10 +74,12 @@ code {
   .item-table-headers {
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     background: rgba(0, 127, 255, 0.1);
+    font-size: 0.75em;
   }
 
   .item-table-data {
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     background: rgba(0, 0, 0, 0.01);
+    font-size: 0.75em;
   }
 }
