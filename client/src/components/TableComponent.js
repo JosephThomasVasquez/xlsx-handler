@@ -4,11 +4,11 @@ const TableComponent = ({ data }) => {
   const [dataLoaded, setDataLoaded] = useState(false);
   const [tableHeaders, setTableHeaders] = useState([]);
   const [itemRarity, setItemRarity] = useState([
-    "common",
-    "uncommon",
-    "rare",
-    "epic",
-    "legendary",
+    "Common",
+    "Uncommon",
+    "Rare",
+    "Epic",
+    "Legendary",
   ]);
 
   useEffect(() => {
@@ -19,6 +19,7 @@ const TableComponent = ({ data }) => {
       if (headerData) {
         setTableHeaders(headerData);
         console.log("Table Headers", tableHeaders);
+        console.log(Object.values(data[0]));
       }
       setDataLoaded(true);
     }
@@ -40,36 +41,16 @@ const TableComponent = ({ data }) => {
           {dataLoaded &&
             data.map((item, index) => (
               <tr className="item-table-row" key={index}>
-                <td className="item-table-data">{Object.values(item)[0]}</td>
-                <td className="item-table-data">{Object.values(item)[1]}</td>
-                <td className="item-table-data">{Object.values(item)[2]}</td>
-                <td
-                  className={`item-table-data ${Object.values(
-                    item
-                  )[3].toLowerCase()}`}
-                >
-                  {Object.values(item)[3]}
-                </td>
-                <td className="item-table-data">{Object.values(item)[4]}</td>
-                <td className="item-table-data">{Object.values(item)[5]}</td>
-                <td className="item-table-data">{Object.values(item)[6]}</td>
-                <td className="item-table-data">{Object.values(item)[7]}</td>
-                <td className="item-table-data">{Object.values(item)[8]}</td>
-                <td className="item-table-data">{Object.values(item)[9]}</td>
-                <td className="item-table-data">{Object.values(item)[10]}</td>
-                <td className="item-table-data">{Object.values(item)[11]}</td>
-                <td className="item-table-data">{Object.values(item)[12]}</td>
-                <td className="item-table-data">{Object.values(item)[13]}</td>
-                <td className="item-table-data">{Object.values(item)[14]}</td>
-                <td className="item-table-data">{Object.values(item)[15]}</td>
-                <td className="item-table-data">{Object.values(item)[16]}</td>
-                <td className="item-table-data">{Object.values(item)[17]}</td>
-                <td className="item-table-data">{Object.values(item)[18]}</td>
-                <td className="item-table-data">{Object.values(item)[19]}</td>
-                <td className="item-table-data">{Object.values(item)[20]}</td>
-                <td className="item-table-data">{Object.values(item)[21]}</td>
-                <td className="item-table-data">{Object.values(item)[22]}</td>
-                <td className="item-table-data">{Object.values(item)[23]}</td>
+                {Object.values(item).map((value, index) => (
+                  <td
+                    className={`item-table-data ${
+                      itemRarity.includes(value) && value.toLowerCase()
+                    }`}
+                    key={index}
+                  >
+                    {value}
+                  </td>
+                ))}
               </tr>
             ))}
         </tbody>
