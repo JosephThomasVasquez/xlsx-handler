@@ -3,6 +3,13 @@ import React, { useState, useEffect } from "react";
 const TableComponent = ({ data }) => {
   const [dataLoaded, setDataLoaded] = useState(false);
   const [tableHeaders, setTableHeaders] = useState([]);
+  const [itemRarity, setItemRarity] = useState([
+    "common",
+    "uncommon",
+    "rare",
+    "epic",
+    "legendary",
+  ]);
 
   useEffect(() => {
     if (data) {
@@ -36,7 +43,13 @@ const TableComponent = ({ data }) => {
                 <td className="item-table-data">{Object.values(item)[0]}</td>
                 <td className="item-table-data">{Object.values(item)[1]}</td>
                 <td className="item-table-data">{Object.values(item)[2]}</td>
-                <td className="item-table-data">{Object.values(item)[3]}</td>
+                <td
+                  className={`item-table-data ${Object.values(
+                    item
+                  )[3].toLowerCase()}`}
+                >
+                  {Object.values(item)[3]}
+                </td>
                 <td className="item-table-data">{Object.values(item)[5]}</td>
                 <td className="item-table-data">{Object.values(item)[6]}</td>
                 <td className="item-table-data">{Object.values(item)[7]}</td>
