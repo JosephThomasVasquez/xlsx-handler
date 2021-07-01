@@ -26,7 +26,8 @@ const TableComponent = ({ data }) => {
   }, []);
 
   return (
-    <div>
+    <div className="container-sheet">
+      <div>Sheet</div>
       <table className="table-view">
         <tbody>
           <tr>

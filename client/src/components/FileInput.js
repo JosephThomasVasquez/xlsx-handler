@@ -72,23 +72,25 @@ const FileInput = () => {
   };
 
   return (
-    <div className="container">
-      <form action="" className="form">
-        <label htmlFor="file" className="grid-section">
-          <input
-            type="file"
-            name="file"
-            id="file"
-            className="file-input"
-            onChange={handleFile}
-            onDrop={handleFile}
-            multiple
-          />
-          <p className="file-text">Drag or Select a File.</p>
-        </label>
+    <div>
+      <div className="container">
+        <form action="" className="form">
+          <label htmlFor="file" className="grid-section">
+            <input
+              type="file"
+              name="file"
+              id="file"
+              className="file-input"
+              onChange={handleFile}
+              onDrop={handleFile}
+              multiple
+            />
+            <p className="file-text">Drag or Select a File.</p>
+          </label>
 
-        <button type="submit">Submit</button>
-      </form>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
       <section className="table-section">
         {file && <TableComponent data={file} />}
       </section>
