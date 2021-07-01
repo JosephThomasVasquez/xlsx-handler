@@ -2,8 +2,8 @@ $font-primary: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI",
   "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
   "Helvetica Neue", sans-serif;
 
-  $bg-color1: rgba(105, 127, 172, 1);
-  $bg-color2: rgba(105, 127, 172, 0.15);
+$bg-color1: rgba(105, 127, 172, 1);
+$bg-color2: rgba(105, 127, 172, 0.15);
 
 body {
   margin: 0;
@@ -82,4 +82,33 @@ code {
     background: rgba(0, 0, 0, 0.01);
     font-size: 0.75em;
   }
+}
+
+.legendary {
+  background-color: rgb(204, 157, 29) !important;
+  color: white;
+  border-radius: 5px;
+}
+
+.epic {
+  background-color: rgba(98, 0, 255, 1) !important;
+  color: white;
+  border-radius: 5px;
+}
+
+.rare {
+  background-color: rgb(0, 81, 255) !important;
+  color: white;
+  border-radius: 5px;
+}
+
+.uncommon {
+  background-color: rgb(0, 177, 9) !important;
+  color: white;
+  border-radius: 5px;
+}
+.common {
+  background-color: rgb(148, 161, 189) !important;
+  color: white;
+  border-radius: 5px;
 }
