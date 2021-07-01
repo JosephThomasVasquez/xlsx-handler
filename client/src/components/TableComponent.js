@@ -50,6 +50,7 @@ const TableComponent = ({ data }) => {
                 >
                   {Object.values(item)[3]}
                 </td>
+                <td className="item-table-data">{Object.values(item)[4]}</td>
                 <td className="item-table-data">{Object.values(item)[5]}</td>
                 <td className="item-table-data">{Object.values(item)[6]}</td>
                 <td className="item-table-data">{Object.values(item)[7]}</td>
