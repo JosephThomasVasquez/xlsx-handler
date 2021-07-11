@@ -66,11 +66,12 @@ code {
 .container-sheet {
   text-align: center;
   width: 100%;
-  padding: 1em;
+  padding: 1em 0;
   margin-top: 1em;
   background-color: white;
   border-radius: 5px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+  overflow-y: hidden;
 }
 
 .table-view {
